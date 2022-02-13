@@ -15,5 +15,8 @@ const mix = require('laravel-mix');
 //     .postCss('resources/css/app.css', 'public/css', [
 //         //
 //     ]);
-mix.sass('resources/sass/app.scss', 'public/assets/css');
-    // .sass('resources/sass/admin.sass', 'public/assets/css');
+
+mix.sass('resources/sass/app.scss', 'assets/sass/app.css');
+mix.setResourceRoot(__dirname + 'public/')
+mix.postCss('public/assets/sass/app.css', 'public/assets/css', [require("tailwindcss"),]);
+mix.setResourceRoot(__dirname + 'resources/')

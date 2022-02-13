@@ -5,5 +5,5 @@
 <title>@yield('title')</title>
 
 <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
-
+<script src="https://cdn.tailwindcss.com"></script>
 <livewire:styles/>
