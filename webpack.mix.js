@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss')
 
 /*
  |--------------------------------------------------------------------------
@@ -16,7 +17,10 @@ const mix = require('laravel-mix');
 //         //
 //     ]);
 
-mix.sass('resources/sass/app.scss', 'assets/sass/app.css');
-mix.setResourceRoot(__dirname + 'public/')
-mix.postCss('public/assets/sass/app.css', 'public/assets/css', [require("tailwindcss"),]);
-mix.setResourceRoot(__dirname + 'resources/')
+// mix.sass('resources/sass/app.scss', 'assets/sass/app.css');
+// mix.setResourceRoot(__dirname + 'public/')
+// mix.postCss('public/assets/sass/app.css', 'public/assets/css', [require("tailwindcss"),]);
+// mix.setResourceRoot(__dirname + 'resources/')
+// snip...
+mix.sass('resources/sass/app.scss', 'public/assets/css/app.css')
+    .options({ postCss: [ tailwindcss('./tailwind.config.js')]})
