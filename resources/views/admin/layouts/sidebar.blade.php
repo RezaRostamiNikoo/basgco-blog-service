@@ -211,15 +211,13 @@
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);" class="waves-effect">
-                        <span class="badge rounded-pill bg-success float-end"
-                            key="t-new">@lang('translation.New')</span>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bx-detail"></i>
                         <span key="t-blog">@lang('translation.Blog')</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('admin.blogs.list')}}" key="t-blog-list">@lang('translation.Blog_List')</a></li>
-                        <li><a href="#" key="t-blog-grid">@lang('translation.Blog_Grid')</a></li>
+                        <li><a href="{{route('admin.blogs.create')}}" key="t-blog-grid">@lang('translation.New_Blog')</a></li>
                         <li><a href="#" key="t-blog-details">@lang('translation.Blog_Details')</a></li>
                     </ul>
                 </li>

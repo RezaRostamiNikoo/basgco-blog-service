@@ -12,7 +12,8 @@ Route::prefix('/admin')->name('admin.')->group(function () {
 
 
     Route::prefix('/blogs')->name('blogs.')->group(function () {
-        Route::get('/', [\App\Http\Controllers\Admin\BlogController::class, 'index'])->name('list');
+        Route::get('/', \App\Http\Livewire\Admin\Blogs\BlogsList::class)->name('list');
+        Route::get('/create', \App\Http\Livewire\Admin\Blogs\NewBlog::class)->name('create');
 
     });
 });

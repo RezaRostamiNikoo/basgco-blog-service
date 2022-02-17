@@ -21,4 +21,5 @@ jobs:
       run: chmod -R 777 storage bootstrap/cache
     - name: Migration Database
       run: php artisan migrate
-
+    - name: install npm dependencies
+      run: npm install

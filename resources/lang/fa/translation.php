@@ -72,7 +72,7 @@ return [
     "Profile" => "Profile",
     "Blog" => "بلاگ",
     "Blog_List" => "لیست بلاگ ها",
-    "Blog_Grid" => "Blog Grid",
+    "New_Blog" => "بلاگ جدید",
     "Blog_Details" => "جزییات بلاگ",
     "Pages" => "Pages",
     "Authentication" => "Authentication",

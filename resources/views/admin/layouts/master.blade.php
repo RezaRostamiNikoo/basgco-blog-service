@@ -36,9 +36,6 @@
     </div>
     <!-- END layout-wrapper -->
 
-    <!-- Right Sidebar -->
-    @include('admin.layouts.right-sidebar')
-    <!-- /Right-bar -->
 
     <!-- JAVASCRIPT -->
     @include('admin.layouts.vendor-scripts')
