@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="{{app()->getLocale()}}">
+<html lang="{{app()->getLocale()}}" dir="rtl">
 <head>
     @include('layouts.head')
 </head>
 <body>
-<livewire:components.header.show-header />
+{{--<livewire:components.header.show-header />--}}
 {{$slot}}
 
 @include('layouts.footer')
 
-<livewire:scripts/>
+{{--<livewire:scripts/>--}}
 
 </body>
 </html>
