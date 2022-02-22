@@ -4,14 +4,22 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
 
-Route::get('/', \App\Http\Livewire\Pages\Landings\Home::class);
-Route::get('/posts', \App\Http\Livewire\Pages\Posts\ShowPosts::class);
+Route::get('/', \App\Http\Livewire\Pages\Landings\Home::class)->name('home');
+Route::get('/blog', \App\Http\Livewire\Pages\Landings\Home::class)->name('blog');
+Route::get('/departments', \App\Http\Livewire\Pages\Landings\Home::class)->name('departments');
+Route::get('/products', \App\Http\Livewire\Pages\Landings\Home::class)->name('products');
+Route::get('/about-us', \App\Http\Livewire\Pages\Landings\Home::class)->name('aboutus');
+Route::get('/contact-us', \App\Http\Livewire\Pages\Landings\Home::class)->name('contactus');
+
+
+
+Route::get('/login', \App\Http\Livewire\Admin\Auth\Login::class)->name('login');
 
 Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 
 
-    Route::prefix('/fff')->name('blogs.')->group(function () {
+    Route::prefix('/blogs')->name('blogs.')->group(function () {
         Route::get('/', \App\Http\Livewire\Admin\Blogs\BlogsList::class)->name('list');
         Route::get('/create', \App\Http\Livewire\Admin\Blogs\NewBlog::class)->name('create');
 
