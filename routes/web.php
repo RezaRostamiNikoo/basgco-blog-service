@@ -12,10 +12,12 @@ Route::get('/about-us', \App\Http\Livewire\Pages\Landings\Home::class)->name('ab
 Route::get('/contact-us', \App\Http\Livewire\Pages\Landings\Home::class)->name('contactus');
 
 
+// Auth Routes
+Route::get('/login', \App\Http\Livewire\Pages\Auth\Login::class)->name('login');
+Route::get('/password-request', \App\Http\Livewire\Pages\Auth\Login::class)->name('password.request');
 
-Route::get('/login', \App\Http\Livewire\Admin\Auth\Login::class)->name('login');
 
-Route::prefix('/admin')->name('admin.')->group(function () {
+Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 
 
