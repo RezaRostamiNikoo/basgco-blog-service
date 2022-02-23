@@ -15,7 +15,7 @@ class CreateModelCategoriesTable extends Migration
     {
         Schema::create('model_categories', function (Blueprint $table) {
             $table->id();
-            $table->morphs('taggable');
+            $table->morphs('categorizable');
             $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
         });

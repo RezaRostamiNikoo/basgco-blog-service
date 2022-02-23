@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['title','slug','meta_title','content'];
+
+    public function posts()
+    {
+        return $this->morphedByMany(Post::class,'taggable','model_tags');
+    }
 }

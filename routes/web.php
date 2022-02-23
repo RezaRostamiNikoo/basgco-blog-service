@@ -17,13 +17,25 @@ Route::get('/login', \App\Http\Livewire\Pages\Auth\Login::class)->name('login');
 Route::get('/password-request', \App\Http\Livewire\Pages\Auth\Login::class)->name('password.request');
 
 
-Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
+Route::middleware('auth:sanctum')->prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 
 
     Route::prefix('/blogs')->name('blogs.')->group(function () {
         Route::get('/', \App\Http\Livewire\Admin\Blogs\BlogsList::class)->name('list');
         Route::get('/create', \App\Http\Livewire\Admin\Blogs\NewBlog::class)->name('create');
+
+    });
+
+    Route::prefix('/categories')->name('categories.')->group(function () {
+//        Route::get('/', \App\Http\Livewire\Admin\Blogs\BlogsList::class)->name('list');
+        Route::get('/create', \App\Http\Livewire\Admin\Categories\CreateCategory::class)->name('create');
+
+    });
+
+    Route::prefix('/tags')->name('tags.')->group(function () {
+//        Route::get('/', \App\Http\Livewire\Admin\Blogs\BlogsList::class)->name('list');
+        Route::get('/create', \App\Http\Livewire\Admin\Tags\CreateTag::class)->name('create');
 
     });
 });

@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use App\Models\User;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class UserSeeder extends Seeder
 {
@@ -16,10 +19,9 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'reza',
-            'email' => 'rezarostaminikoo@gmail.com',
+            'name' => 'admin',
+            'email' => 'info@basgco.ir',
             'password' => bcrypt('password')
         ]);
-        UserFactory::new()->count(10)->create();
     }
 }

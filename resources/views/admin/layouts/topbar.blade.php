@@ -188,53 +188,7 @@
             </div>
         </div>
 
-        <div class="dropdown d-inline-block">
-            <button type="button" class="btn header-item waves-effect"
-                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                @switch(Session::get('lang'))
-                    @case('ru')
-                        <img src="{{ URL::asset('/admin/assets/images/flags/russia.jpg')}}" alt="Header Language" height="16">
-                    @break
-                    @case('it')
-                        <img src="{{ URL::asset('/admin/assets/images/flags/italy.jpg')}}" alt="Header Language" height="16">
-                    @break
-                    @case('de')
-                        <img src="{{ URL::asset('/admin/assets/images/flags/germany.jpg')}}" alt="Header Language" height="16">
-                    @break
-                    @case('es')
-                        <img src="{{ URL::asset('/admin/assets/images/flags/spain.jpg')}}" alt="Header Language" height="16">
-                    @break
-                    @default
-                        <img src="{{ URL::asset('/admin/assets/images/flags/us.jpg')}}" alt="Header Language" height="16">
-                @endswitch
-            </button>
-            <div class="dropdown-menu dropdown-menu-end">
 
-                <!-- item-->
-                <a href="{{ url('index/en') }}" class="dropdown-item notify-item language" data-lang="eng">
-                    <img src="{{ URL::asset ('/admin/assets/images/flags/us.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
-                </a>
-                <!-- item-->
-                <a href="{{ url('index/es') }}" class="dropdown-item notify-item language" data-lang="sp">
-                    <img src="{{ URL::asset ('/admin/assets/images/flags/spain.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                </a>
-
-                <!-- item-->
-                <a href="{{ url('index/de') }}" class="dropdown-item notify-item language" data-lang="gr">
-                    <img src="{{ URL::asset ('/admin/assets/images/flags/germany.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
-                </a>
-
-                <!-- item-->
-                <a href="{{ url('index/it') }}" class="dropdown-item notify-item language" data-lang="it">
-                    <img src="{{ URL::asset ('/admin/assets/images/flags/italy.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                </a>
-
-                <!-- item-->
-                <a href="{{ url('index/ru') }}" class="dropdown-item notify-item language" data-lang="ru">
-                    <img src="{{ URL::asset ('/admin/assets/images/flags/russia.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                </a>
-            </div>
-        </div>
 
         <div class="dropdown d-none d-lg-inline-block ms-1">
             <button type="button" class="btn header-item noti-icon waves-effect"
@@ -334,7 +288,7 @@
                             <img src="{{ URL::asset ('/admin/assets/images/users/avatar-3.jpg') }}"
                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
                             <div class="flex-grow-1">
-                                <h6 class="mt-0 mb-1">@lang('translation.James_Lemire')</h6>
+                                <h6 class="mt-0 mb-1">{{\Illuminate\Support\Facades\Auth::user()->name}}</h6>
                                 <div class="font-size-12 text-muted">
                                     <p class="mb-1" key="t-simplified">@lang('translation.It_will_seem_like_simplified_English')</p>
                                     <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span key="t-hours-ago">@lang('translation.1_hours_ago')</span></p>
@@ -384,9 +338,9 @@
         <div class="dropdown d-inline-block">
             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-circle header-profile-user" src="{{-- isset(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('/admin/assets/images/users/avatar-1.jpg') --}}"
+                <img class="rounded-circle header-profile-user" src="{{asset('/admin/assets/images/users/avatar-1.jpg')}}"
                     alt="Header Avatar">
-                <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{--ucfirst(Auth::user()->name)--}}</span>
+                <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{Auth::user()->name}}</span>
                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-end">
@@ -403,11 +357,7 @@
             </div>
         </div>
 
-        <div class="dropdown d-inline-block">
-            <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                <i class="bx bx-cog bx-spin"></i>
-            </button>
-        </div>
+
 
     </div>
 </div>

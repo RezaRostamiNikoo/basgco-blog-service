@@ -177,5 +177,9 @@ return [
     "Logout" => "Logout",
     "Edit_Details" => "Edit Details",
     "Placeholders" => "Placeholders",
-    "Toasts" => "Toasts"
+    "Toasts" => "Toasts",
+    "tags" => "تگ ها",
+    "tag" => "تگ",
+    "categories" => "دسته بندی ها",
+    "category" => "دسته بندی",
 ];

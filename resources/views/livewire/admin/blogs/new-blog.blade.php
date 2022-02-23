@@ -17,9 +17,7 @@
                         plugin that makes it easy to create simple, beautiful wysiwyg editors
                         with the help of wysihtml5 and Twitter Bootstrap.</p>
 
-                    <form method="post">
-                        <textarea id="blog-content" name="area"></textarea>
-                    </form>
+                    <livewire:admin.components.create-post-form />
 
                 </div>
             </div>
@@ -28,10 +26,6 @@
 
 @endsection
 @section('script')
-    <!--tinymce js-->
-    <script src="/admin/assets/libs/tinymce/tinymce.min.js"></script>
 
-    <!-- init js -->
-    <script src="/admin/assets/js/pages/blogs/new-blog.js"></script>
 @endsection
 
