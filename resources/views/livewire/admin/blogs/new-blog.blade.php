@@ -26,6 +26,12 @@
 
 @endsection
 @section('script')
+    <!--tinymce js-->
+{{--    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>--}}
+    <script src="/admin/assets/libs/tinymce/tinymce.min.js"></script>
+
+    <!-- init js -->
+    <script src="/admin/assets/js/pages/blogs/new-blog.js"></script>
 
 @endsection
 

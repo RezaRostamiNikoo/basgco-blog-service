@@ -19,9 +19,12 @@ class CreatePostsTable extends Migration
             $table->foreignId('parent_id')->nullable()->constrained('posts');
             $table->string('meta_title');
             $table->string('title')->unique();
+            $table->string('sub_title')->unique();
             $table->string('slug')->unique();
             $table->string('excerpt');
             $table->longText('content');
+
+            $table->string('image_url')->nullable();
 
             $table->string('post_status');
 
