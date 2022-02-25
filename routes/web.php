@@ -38,4 +38,12 @@ Route::middleware('auth:sanctum')->prefix('/admin')->name('admin.')->group(funct
         Route::get('/create', \App\Http\Livewire\Admin\Tags\CreateTag::class)->name('create');
 
     });
+
+    Route::prefix('/media')->name('media.')->group(function () {
+        Route::get('/', \App\Http\Livewire\Admin\Media\Media::class)->name('index');
+
+    });
+
+
+
 });

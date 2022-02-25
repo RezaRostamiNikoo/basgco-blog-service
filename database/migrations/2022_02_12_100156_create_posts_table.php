@@ -17,18 +17,18 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->foreignId('author_id')->constrained('users');
             $table->foreignId('parent_id')->nullable()->constrained('posts');
-            $table->string('meta_title');
-            $table->string('title')->unique();
-            $table->string('sub_title')->unique();
-            $table->string('slug')->unique();
-            $table->string('excerpt');
-            $table->longText('content');
+            $table->string('meta_title')->nullable();
+            $table->string('title')->unique()->nullable();
+            $table->string('sub_title')->unique()->nullable();
+            $table->string('slug')->unique()->nullable();
+            $table->string('excerpt')->nullable();
+            $table->longText('content')->nullable();
 
             $table->string('image_url')->nullable();
 
-            $table->string('post_status');
+            $table->string('post_status')->default('draft');
 
-            $table->string('comment_status');
+            $table->string('comment_status')->default('closed');
 
             $table->timestamp('published_at')->nullable();
             $table->timestamps();

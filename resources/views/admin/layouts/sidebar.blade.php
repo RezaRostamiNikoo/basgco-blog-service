@@ -224,13 +224,20 @@
                 <li>
                     <a href="{{route('admin.categories.create')}}" class="waves-effect">
                         <i class="bx bx-detail"></i>
-                        <span key="t-blog">@lang('translation.categories')</span>
+                        <span key="t-categories">@lang('translation.categories')</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{route('admin.tags.create')}}" class="waves-effect">
                         <i class="bx bx-detail"></i>
-                        <span key="t-blog">@lang('translation.tags')</span>
+                        <span key="t-tags">@lang('translation.tags')</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{route('admin.media.index')}}" class="waves-effect">
+                        <i class="bx bx-detail"></i>
+                        <span key="t-media">@lang('translation.media')</span>
                     </a>
                 </li>
                 @can('aa')

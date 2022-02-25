@@ -182,4 +182,5 @@ return [
     "tag" => "تگ",
     "categories" => "دسته بندی ها",
     "category" => "دسته بندی",
+    "media" => "مدیا",
 ];
