@@ -15,8 +15,6 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        User::all()->each(function (User $user) {
-            PostFactory::new()->count(20)->create(['author_id' => $user->id]);
-        });
+
     }
 }

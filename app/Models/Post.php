@@ -54,8 +54,11 @@ class Post extends Model implements HasMedia
             ->performOnCollections('posts');
 
     }
+
     public static function newDraft(): Post
     {
-        return Post::create(['author_id' => auth()->user()->id]);
+        $post = Post::where('post_status', 'preparing')->where('author_id', auth()->user()->id)->get();
+
+        return count($post) ? $post[0] : Post::create(['author_id' => auth()->user()->id]);
     }
 }

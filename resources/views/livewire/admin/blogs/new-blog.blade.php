@@ -12,22 +12,16 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-
-                    <h4 class="card-title">مقاله مورد نظر را وارد کنید</h4>
-                    <p class="card-title-desc">توضیحا در باره نوشتن مقاله</p>
-
+                    <h4 class="card-title">مقاله جدید</h4>
+                    <hr/>
                     <livewire:admin.components.create-post-form :post="$post"/>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- end row -->
 
 @endsection
-@section('script')
-    <!--tinymce js-->
-    {{--    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>--}}
-    <script src="/admin/assets/libs/tinymce/tinymce.min.js"></script>
 
-    <!-- init js -->
-    <script src="/admin/assets/js/pages/blogs/new-blog.js"></script>
-
-@endsection
 

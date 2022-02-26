@@ -2,8 +2,10 @@
 
     <form wire:submit.prevent="save">
         @csrf
-
-        <input wire:model="media" type="file">
+        <div>
+            <label for="formFile" class="form-label">تصویر مقاله را انتخاب کنید</label>
+            <input wire:model="media" class="form-control" type="file" placeholder="شسیشسی">
+        </div>
 {{--        @error('media') <span class="error">{{ $message }}</span> @enderror--}}
 {{--        <div wire:loading wire:target="media">Uploading...</div>--}}
 

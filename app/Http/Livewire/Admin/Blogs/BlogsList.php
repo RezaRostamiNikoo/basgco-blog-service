@@ -9,7 +9,7 @@ class BlogsList extends Component
 {
     public function render()
     {
-        $blogs = Post::all();
+        $blogs = Post::where('post_status','<>','preparing')->orderBy('created_at', 'DESC')->get();
         return view('livewire.admin.blogs.blogs-list', ['blogs' => $blogs])->layout('admin.layouts.master');
     }
 }

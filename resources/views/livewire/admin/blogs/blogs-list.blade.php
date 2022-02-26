@@ -10,59 +10,15 @@
     <div class="row">
         <div class="col-xl-9 col-lg-8">
             <div class="card">
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs nav-tabs-custom justify-content-center pt-2" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-bs-toggle="tab" href="#all-post" role="tab">
-                            All Post
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#archive" role="tab">
-                            Archive
-                        </a>
-                    </li>
-                </ul>
+
 
                 <!-- Tab panes -->
                 <div class="tab-content p-4">
                     <div class="tab-pane active" id="all-post" role="tabpanel">
                         <div>
                             <div class="row justify-content-center">
-                                <div class="col-xl-8">
+                                <div class="col-xl-12">
                                     <div>
-                                        <div class="row align-items-center">
-                                            <div class="col-4">
-                                                <div>
-                                                    <h5 class="mb-0">Blog List</h5>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-8">
-                                                <div>
-                                                    <ul class="nav nav-pills justify-content-end">
-                                                        <li class="nav-item">
-                                                            <a class="nav-link disabled" href="#" tabindex="-1"
-                                                               aria-disabled="true">View :</a>
-                                                        </li>
-                                                        <li class="nav-item" data-bs-placement="top" title="List">
-                                                            <a class="nav-link active" href="blog-list">
-                                                                <i class="mdi mdi-format-list-bulleted"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="nav-item" data-bs-placement="top" title="Grid">
-                                                            <a class="nav-link" href="blog-grid">
-                                                                <i class="mdi mdi-view-grid-outline"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- end row -->
-
-                                        <hr class="mb-4">
-
                                         @foreach($blogs as $blog)
                                             <div>
                                                 <h5><a href="blog-details" class="text-dark">{{$blog->title}}</a>
@@ -77,27 +33,31 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-12 col-md-8">
+                                                    <div
+                                                        class="col-12 col-md-8 d-flex flex-column justify-content-between">
                                                         <p>{{ \Illuminate\Support\Str::limit($blog->content,200)}}</p>
-                                                        <div>
-                                                            <a href="#" class="text-primary">بیشتر بخوانید <i
-                                                                    class="mdi mdi-arrow-right"></i></a>
+                                                        <div class="d-flex flex-row-reverse justify-content-between">
+                                                            <a href="#"
+                                                               class="text-primary d-flex justify-content-end">بیشتر
+                                                                بخوانید <i
+                                                                    class="mdi mdi-arrow-left"></i>
+                                                            </a>
+                                                            <ul class="list-inline">
+                                                                <li class="list-inline-item me-3">
+                                                                    <a href="#" class="text-muted">
+                                                                        <i class="bx bx-purchase-tag-alt align-middle text-muted me-1"></i>
+                                                                        دسته بندی :
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item me-3">
+                                                                    <a href="#" class="text-muted">
+                                                                        <i class="bx bx-comment-dots align-middle text-muted me-1"></i>
+                                                                        12
+                                                                        کامنت
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
                                                         </div>
-                                                        <ul class="list-inline">
-                                                            <li class="list-inline-item me-3">
-                                                                <a href="#" class="text-muted">
-                                                                    <i class="bx bx-purchase-tag-alt align-middle text-muted me-1"></i>
-                                                                    Project
-                                                                </a>
-                                                            </li>
-                                                            <li class="list-inline-item me-3">
-                                                                <a href="#" class="text-muted">
-                                                                    <i class="bx bx-comment-dots align-middle text-muted me-1"></i>
-                                                                    12
-                                                                    Comments
-                                                                </a>
-                                                            </li>
-                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>

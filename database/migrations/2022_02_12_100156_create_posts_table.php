@@ -24,9 +24,7 @@ class CreatePostsTable extends Migration
             $table->string('excerpt')->nullable();
             $table->longText('content')->nullable();
 
-            $table->string('image_url')->nullable();
-
-            $table->string('post_status')->default('draft');
+            $table->string('post_status')->default('preparing');
 
             $table->string('comment_status')->default('closed');
 
