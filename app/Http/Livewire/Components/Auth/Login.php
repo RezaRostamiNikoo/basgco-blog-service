@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Auth;
+namespace App\Http\Livewire\Components\Auth;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +17,8 @@ class Login extends Component
     {
         $this->remember = old('remember');
     }
+
+
 
     public function mount($email = '', $password = '', $remember = false)
     {
@@ -42,6 +44,6 @@ class Login extends Component
 
     public function render()
     {
-        return view('livewire.admin.auth.login')->layout('admin.layouts.master-without-nav');
+        return view('livewire.components.auth.login');
     }
 }

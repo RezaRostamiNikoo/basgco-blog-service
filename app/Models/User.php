@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\File;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
 
@@ -48,15 +49,26 @@ class User extends Authenticatable implements HasMedia
     ];
 
 
-//    public function registerMediaCollections(): void
-//    {
-//        $this->addMediaCollection('avatars')
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('avatars')
+            ->useFallbackUrl('/admin/assets/images/users/avatar-7.jpg')
 //            ->acceptsFile(function (File $file) {
 //                return $file->mimeType === 'image/jpeg';
 //            })
 //            ->acceptsMimeTypes(['image/jpeg'])
-//            ->useDisk('media')
-//            ->singleFile();
-//
-//    }
+            ->useDisk('avatars')
+            ->singleFile();
+
+    }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('profile')
+            ->width(198)
+            ->height(198)
+//            ->sharpen(10),
+            ->performOnCollections('avatars');
+
+    }
 }

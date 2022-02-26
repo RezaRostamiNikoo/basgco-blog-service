@@ -95,7 +95,7 @@
                                         </div>
 
                                         <div class="mt-4">
-                                            <livewire:admin.auth.login />
+                                            <livewire:components.auth.login />
                                             <div class="mt-5 text-center">
                                                 <p>حساب کاربری نداری ? <a href="{{ url('register') }}" class="fw-medium text-primary"> همین حالا ثبت نام کن </a> </p>
                                             </div>

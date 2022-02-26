@@ -14,6 +14,6 @@ class ShowPosts extends Component
     public function render()
     {
         $posts = Post::all();
-        return view('livewire.pages.posts.show-posts', compact('posts'));
+        return view('livewire.pages.posts.show-posts', ['posts' => $posts]);
     }
 }

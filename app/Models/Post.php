@@ -22,14 +22,14 @@ class Post extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('posts')
-            ->useFallbackUrl('/media/posts/default.png');
+            ->useFallbackUrl('/assets/images/default-post-header-image.jpg')
 //            ->useFallbackPath(public_path('/images/anonymous-user.jpg'))
 //            ->acceptsFile(function (File $file) {
 //                return $file->mimeType === 'image/jpeg';
 //            })
 //            ->acceptsMimeTypes(['image/jpeg'])
-//            ->useDisk('media')
-//            ->singleFile()
+            ->useDisk('posts')
+            ->singleFile();
 //            ->onlyKeepLatest(3)
 //            ->withResponsiveImages()
 //            ->registerMediaConversions(function (Media $media) {
@@ -42,6 +42,18 @@ class Post extends Model implements HasMedia
 
     }
 
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('header')
+            ->width(768)
+//            ->sharpen(10),
+            ->performOnCollections('posts');
+        $this->addMediaConversion('thumbnail')
+            ->width(300)
+//            ->sharpen(10),
+            ->performOnCollections('posts');
+
+    }
     public static function newDraft(): Post
     {
         return Post::create(['author_id' => auth()->user()->id]);

@@ -53,10 +53,16 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
 
-        'media' => [
+        'avatars' => [
             'driver' => 'local',
-            'root' => storage_path('app/media'),
-            'url' => env('APP_URL') . '/media',
+            'root' => storage_path('app/public/media/avatars'),
+            'url' => env('APP_URL') . '/storage/media/avatars',
+            'visibility' => 'public',
+        ],
+        'posts' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/media/posts'),
+            'url' => env('APP_URL') . '/storage/media/posts',
             'visibility' => 'public',
         ],
     ],
@@ -74,7 +80,6 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('media') => storage_path('app/media'),
     ],
 
 ];
