@@ -61,4 +61,15 @@ class Post extends Model implements HasMedia
 
         return count($post) ? $post[0] : Post::create(['author_id' => auth()->user()->id]);
     }
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class,'taggable','model_tags');
+    }
+    public function categories()
+    {
+        return $this->morphToMany(Category::class,'categorizable','model_categories');
+    }
+
+
 }

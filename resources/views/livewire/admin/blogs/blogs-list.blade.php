@@ -21,11 +21,13 @@
                                     <div>
                                         @foreach($blogs as $blog)
                                             <div>
-                                                <h5><a href="blog-details" class="text-dark">{{$blog->title}}</a>
+                                                <h5>
+                                                    <div vclass="text-dark">{{$blog->title}}</div>
+                                                    <div class="text-muted">{{$blog->sub_title}}</div>
                                                 </h5>
                                                 <p class="text-muted">{{jdate($blog->created_at)}}</p>
                                                 <div class="row">
-                                                    <div class="col-12 col-md-4">
+                                                    <div class="col-12 col-md-2">
                                                         <div class="position-relative mb-3">
                                                             <img
                                                                 src="{{ $blog->getFirstMediaUrl('posts','thumbnail') }}"
@@ -34,19 +36,21 @@
                                                     </div>
 
                                                     <div
-                                                        class="col-12 col-md-8 d-flex flex-column justify-content-between">
-                                                        <p>{{ \Illuminate\Support\Str::limit($blog->content,200)}}</p>
+                                                        class="col-12 col-md-10 d-flex flex-column justify-content-between">
+                                                        <p>{{ \Illuminate\Support\Str::limit($blog->excerpt,200)}}</p>
                                                         <div class="d-flex flex-row-reverse justify-content-between">
-                                                            <a href="#"
+                                                            <a href="{{route('ssssss',['categoryslug'=> count($blog->categories) ? $blog->categories[0]->slug : 'sdsd','blogslug'=> $blog->slug])}}"
                                                                class="text-primary d-flex justify-content-end">بیشتر
                                                                 بخوانید <i
                                                                     class="mdi mdi-arrow-left"></i>
                                                             </a>
                                                             <ul class="list-inline">
                                                                 <li class="list-inline-item me-3">
-                                                                    <a href="#" class="text-muted">
+                                                                    <a href="#" class="text-muted d-flex">
                                                                         <i class="bx bx-purchase-tag-alt align-middle text-muted me-1"></i>
-                                                                        دسته بندی :
+                                                                        @foreach($blog->categories as $cat)
+                                                                            <p> {{$cat->title}}</p>
+                                                                        @endforeach
                                                                     </a>
                                                                 </li>
                                                                 <li class="list-inline-item me-3">

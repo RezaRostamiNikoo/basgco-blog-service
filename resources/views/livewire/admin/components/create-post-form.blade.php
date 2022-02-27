@@ -1,3 +1,6 @@
+@section('css')
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+@endsection
 <div>
     <div class="row">
         <div class="col-12">
@@ -24,7 +27,7 @@
                          src="{{$photo ? $photo->temporaryUrl() : $post->getFirstMediaUrl('posts','thumbnail')}}">
                     @if($photo != null)
                         <p wire:click="deleteImage"
-                                class="btn btn-close btn-lg position-absolute top-0 start-0 bg-danger"></p>@endif
+                           class="btn btn-close btn-lg position-absolute top-0 start-0 bg-danger"></p>@endif
                 </div>
 
             </div>
@@ -63,8 +66,35 @@
                         <div class="error">{{$message}}</div>@enderror
                     </div>
                 </div>
-            </div>
 
+                <div class="row" wire:ignore>
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">کتگوری</label>
+                            <select id="id_cat" class="select2 form-control select2-multiple" multiple="multiple">
+                                @foreach($allCategories as $cat)
+                                    <option value="{{$cat['id']}}">{{$cat['title']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+{{--                        {{$categories}}--}}
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">دسه بندی ها</label>
+                            <select id="id_tag" class="select2 form-control select2-multiple" multiple="multiple">
+                                @foreach($allTags as $tag)
+                                    <option value="{{$tag['id']}}">{{$tag['title']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        @foreach($tags as $t)
+                            {{$t}}
+                        @endforeach
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <div wire:ignore>
@@ -74,8 +104,11 @@
 
 </div>
 @section('script')
+    <script src="{{ URL::asset('/admin/assets/libs/select2/select2.min.js') }}"></script>
+
+
     <!--tinymce js-->
-    {{--    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>--}}
+    {{--        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>--}}
     <script src="/admin/assets/libs/tinymce/tinymce.min.js"></script>
 
     <!-- init js -->
@@ -134,6 +167,20 @@
                     @this.set('post.content', editor.getContent());
                     });
                 },
+                file_picker_callback(callback, value, meta) {
+                    let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
+                    let y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight
+
+                    tinymce.activeEditor.windowManager.openUrl({
+                        url: '/file-manager/tinymce5',
+                        title: 'Laravel File manager (Basgco)',
+                        width: x * 0.8,
+                        height: y * 0.8,
+                        onMessage: (api, message) => {
+                            callback(message.content, {text: message.text})
+                        }
+                    })
+                }
             });
 
             tinymce.activeEditor.uploadImages(function (success) {
@@ -142,5 +189,61 @@
         });
 
     </script>
+
+    <script>
+        var categories = $("#id_cat");
+        var tags = $("#id_tag");
+
+        categories.select2({
+            dir: "rtl",
+            placeholder: "کتگوری",
+        });
+        tags.select2({
+            dir: "rtl",
+            placeholder: "دسته بندی",
+        });
+
+        categories.on("change", function (e) {
+            @this.set('categories',$(categories).val());
+        });
+        tags.on("change", function (e) {
+            @this.set('tags',$(tags).val());
+        });
+        // $(".select2-ajax").select2({
+        //     ajax: {
+        //         url: "https://api.github.com/search/repositories",
+        //         dataType: "json",
+        //         delay: 250,
+        //         data: function data(e) {
+        //             return {
+        //                 q: e.term,
+        //                 page: e.page
+        //             };
+        //         },
+        //         processResults: function processResults(e, t) {
+        //             return t.page = t.page || 1, {
+        //                 results: e.items,
+        //                 pagination: {
+        //                     more: 30 * t.page < e.total_count
+        //                 }
+        //             };
+        //         },
+        //         cache: !0
+        //     },
+        //     placeholder: "Search for a repository",
+        //     minimumInputLength: 1,
+        //     templateResult: function templateResult(e) {
+        //         if (e.loading) return e.text;
+        //         var t = s("<div class='select2-result-repository clearfix'><div class='select2-result-repository__avatar'><img src='" + e.owner.avatar_url + "' /></div><div class='select2-result-repository__meta'><div class='select2-result-repository__title'></div><div class='select2-result-repository__description'></div><div class='select2-result-repository__statistics'><div class='select2-result-repository__forks'><i class='fa fa-flash'></i> </div><div class='select2-result-repository__stargazers'><i class='fa fa-star'></i> </div><div class='select2-result-repository__watchers'><i class='fa fa-eye'></i> </div></div></div></div>");
+        //         return t.find(".select2-result-repository__title").text(e.full_name), t.find(".select2-result-repository__description").text(e.description), t.find(".select2-result-repository__forks").append(e.forks_count + " Forks"), t.find(".select2-result-repository__stargazers").append(e.stargazers_count + " Stars"), t.find(".select2-result-repository__watchers").append(e.watchers_count + " Watchers"), t;
+        //     },
+        //     templateSelection: function templateSelection(e) {
+        //         return e.full_name || e.text;
+        //     }
+        // });
+
+
+    </script>
+
 
 @endsection

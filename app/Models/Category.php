@@ -16,4 +16,5 @@ class Category extends Model
     {
         return $this->morphedByMany(Post::class,'categorizable','model_categories');
     }
+
 }
