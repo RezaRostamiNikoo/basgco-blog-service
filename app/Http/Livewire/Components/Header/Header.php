@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Components\Header;
 
 use Livewire\Component;
 
-class ShowHeader extends Component
+class Header extends Component
 {
     public $items = [
         'خانه',
@@ -15,6 +15,6 @@ class ShowHeader extends Component
     ];
     public function render()
     {
-        return view('livewire.components.header.show-header');
+        return view('livewire.components.header.header');
     }
 }

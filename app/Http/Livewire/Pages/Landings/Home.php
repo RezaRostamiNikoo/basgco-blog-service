@@ -10,6 +10,6 @@ class Home extends Component
 {
     public function render(Request $request)
     {
-        return view('livewire.pages.landings.home');
+        return view('livewire.pages.landings.home')->layout('livewire.layouts.master');
     }
 }
