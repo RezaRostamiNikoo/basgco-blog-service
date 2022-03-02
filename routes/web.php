@@ -18,9 +18,11 @@ Route::get('/password-request', \App\Http\Livewire\Pages\Auth\Login::class)->nam
 
 
 //
-Route::get('/blogs/{categoryslug}/{blogslug}', [\App\Http\Controllers\BlogController::class,'show'])->name('ssssss');
 
+Route::prefix('blogs')->name('blogs.')->group(function () {
+    Route::get('{categoryslug}/{blogslug}',  [\App\Http\Controllers\BlogController::class,'show'])->name('show');
 
+});
 
 
 Route::middleware('auth:sanctum')->prefix('/admin')->name('admin.')->group(function () {

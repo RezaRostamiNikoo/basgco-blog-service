@@ -39,7 +39,7 @@
                                                         class="col-12 col-md-10 d-flex flex-column justify-content-between">
                                                         <p>{{ \Illuminate\Support\Str::limit($blog->excerpt,200)}}</p>
                                                         <div class="d-flex flex-row-reverse justify-content-between">
-                                                            <a href="{{route('ssssss',['categoryslug'=> count($blog->categories) ? $blog->categories[0]->slug : 'sdsd','blogslug'=> $blog->slug])}}"
+                                                            <a href="{{route('blogs.show',['categoryslug'=> count($blog->categories) ? $blog->categories[0]->slug : 'sdsd','blogslug'=> $blog->slug])}}"
                                                                class="text-primary d-flex justify-content-end">بیشتر
                                                                 بخوانید <i
                                                                     class="mdi mdi-arrow-left"></i>

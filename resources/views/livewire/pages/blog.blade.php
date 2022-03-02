@@ -7,10 +7,16 @@
 
     @section('content')
 
-        <div class="account-pages my-5 pt-5">
+        <div class="row">
+            <div class="container">
+                <a class="btn btn-info" href="{{route('admin.blogs.create').'?post_id='.$post->id}}">ویرایش مقاله</a>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="container">
                 <div class="row">
-                   {{$post->title}}
+                    {{$post->title}}
                 </div>
                 <div class="row">
                     {!! $post->content !!}
