@@ -17,6 +17,14 @@ Route::get('/login', \App\Http\Livewire\Pages\Auth\Login::class)->name('login');
 Route::get('/password-request', \App\Http\Livewire\Pages\Auth\Login::class)->name('password.request');
 
 
+//
+
+Route::prefix('blogs')->name('blogs.')->group(function () {
+    Route::get('{categoryslug}/{blogslug}',  [\App\Http\Controllers\BlogController::class,'show'])->name('show');
+
+});
+
+
 Route::middleware('auth:sanctum')->prefix('/admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 
