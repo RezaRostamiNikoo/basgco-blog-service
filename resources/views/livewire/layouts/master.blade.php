@@ -8,7 +8,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description"/>
     <meta content="Themesbrand" name="author"/>
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ URL::asset('favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ URL::asset('favicon.png') }}">
     <link href="{{ URL::asset('/assets/css/app.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css"/>
 
     <livewire:styles/>
