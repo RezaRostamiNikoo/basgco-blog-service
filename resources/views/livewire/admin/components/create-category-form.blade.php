@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
 
-                <h4 class="card-title">افزودن پایه جدید</h4>
+                <h4 class="card-title">افزودن دسته بندی جدید</h4>
 
                 <form id="gradeCreate" wire:submit.prevent="submit" class="row align-items-center">
                     @csrf
@@ -41,7 +41,7 @@
 
 
                     <div class="col-sm-auto">
-                        <button type="submit" class="btn btn-success">افزودن پایه جدید</button>
+                        <button type="submit" class="btn btn-success">افزودن</button>
                     </div>
                 </form>
                 <div class="table-responsive">

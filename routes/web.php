@@ -8,7 +8,9 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 
 
 // Auth Routes
-Route::get('/login', \App\Http\Livewire\Pages\Auth\Login::class)->name('login');
+Route::get('/login', [\App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [\App\Http\Controllers\Auth\LoginController::class, 'login'])->name('post-login');
+Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 Route::get('/password-request', \App\Http\Livewire\Pages\Auth\Login::class)->name('password.request');
 
 
@@ -16,7 +18,7 @@ Route::get('/password-request', \App\Http\Livewire\Pages\Auth\Login::class)->nam
 
 Route::prefix('blogs')->name('blogs.')->group(function () {
     Route::get('', [\App\Http\Controllers\BlogController::class, 'all'])->name('all');
-    Route::get('{categoryslug}/{blogslug}', [\App\Http\Controllers\BlogController::class, 'show'])->name('show');
+    Route::get('{blog}', [\App\Http\Controllers\BlogController::class, 'show'])->name('show');
 
 });
 
@@ -26,9 +28,9 @@ Route::middleware('auth:sanctum')->prefix('/admin')->name('admin.')->group(funct
 
 
     Route::prefix('/blogs')->name('blogs.')->group(function () {
-        Route::get('/', \App\Http\Livewire\Admin\Blogs\BlogsList::class)->name('list');
+        Route::get('/', [\App\Http\Controllers\Admin\BlogController::class, 'index'])->name('index');
         Route::get('/create', \App\Http\Livewire\Admin\Blogs\NewBlog::class)->name('create');
-
+        Route::get('/{blog}/edit', [\App\Http\Controllers\Admin\BlogController::class, 'edit'])->name('edit');
     });
 
     Route::prefix('/categories')->name('categories.')->group(function () {

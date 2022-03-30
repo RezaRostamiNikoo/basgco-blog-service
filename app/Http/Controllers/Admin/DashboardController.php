@@ -16,8 +16,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-//        Post::all()->first()->addMediaFromUrl('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSivTWLrm5bXsGhNOHarhq26Ts_jy3V6sYaPw&usqp=CAU')
-//            ->toMediaCollection('posts');
         return view('admin.index');
     }
 

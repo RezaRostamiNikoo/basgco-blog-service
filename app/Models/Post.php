@@ -73,10 +73,6 @@ class Post extends Model implements HasMedia
         return $this->morphToMany(Category::class, 'categorizable', 'model_categories');
     }
 
-    public function likes()
-    {
-        return $this->morphToMany(Like::class, 'taggable', 'model_tags');
-    }
 
     public function author(): BelongsTo
     {

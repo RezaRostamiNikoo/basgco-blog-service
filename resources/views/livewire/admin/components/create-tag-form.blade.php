@@ -41,7 +41,7 @@
 
 
                     <div class="col-sm-auto">
-                        <button type="submit" class="btn btn-success">افزودن پایه جدید</button>
+                        <button type="submit" class="btn btn-success">افزودن</button>
                     </div>
                 </form>
                 <div class="table-responsive">

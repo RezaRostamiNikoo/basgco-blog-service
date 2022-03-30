@@ -2,11 +2,19 @@
 
 @section("title","صفحه اصلی | برج افرازان شاهین گستر")
 @section("last-styles")
+
+    <!-- Bootstrap -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- tobii css -->
-    <link href="/assets/css/tobii.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/tobii.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons -->
+    <link href="/assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/assets/css/line.css">
     <!-- Slider -->
     <link rel="stylesheet" href="/assets/css/tiny-slider.css"/>
+    <!-- Main Css -->
+    <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt" />
+    <link href="/assets/css/colors/default.css" rel="stylesheet" id="color-opt">
 
 @endsection
 @section("content")

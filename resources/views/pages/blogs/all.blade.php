@@ -2,6 +2,18 @@
 
 @section("title","بلاگ | برج افرازان شاهین گستر")
 
+@section("last-styles")
+    <!-- Bootstrap -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons -->
+    <link href="/assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/line.css">
+    <!-- Main Css -->
+    <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt" />
+    <link href="/assets/css/colors/default.css" rel="stylesheet" id="color-opt">
+
+@endsection
+
 @section("content")
 
 
@@ -44,120 +56,15 @@
             <div class="row">
                 <livewire:pages.blogs.all />
 
-                <!-- START SIDEBAR -->
-                <div class="col-lg-4 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
-                    <div class="card border-0 sidebar sticky-bar rounded shadow">
-                        <div class="card-body">
-                            <!-- SEARCH -->
-                            <div class="widget">
-                                <form role="search" method="get">
-                                    <div class="input-group mb-3 border rounded">
-                                        <input type="text" id="s" name="s" class="form-control border-0"
-                                               placeholder="جستجوی کلمه کلیدی...">
-                                        <button type="submit" class="input-group-text bg-transparent border-0"
-                                                id="searchsubmit"><i class="uil uil-search"></i></button>
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- SEARCH -->
+                <livewire:pages.blogs.sidebar.all />
 
-                            <!-- Categories -->
-                            <div class="widget mb-4 pb-2">
-                                <h5 class="widget-title">دسته بندیها </h5>
-                                <ul class="list-unstyled mt-4 mb-0 blog-categories">
-                                    <li><a href="jvascript:void(0)">مالی </a> <span class="float-end">13</span></li>
-                                    <li><a href="jvascript:void(0)">شرکتی </a> <span class="float-end">90 </span></li>
-                                    <li><a href="jvascript:void(0)">وبلاگ </a> <span class="float-end">18</span></li>
-                                    <li><a href="jvascript:void(0)">کسب و کار</a> <span class="float-end">20</span></li>
-                                    <li><a href="jvascript:void(0)">سرمایه گذاری </a> <span class="float-end">22</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Categories -->
 
-                            <!-- پست های اخیر -->
-                            <div class="widget mb-4 pb-2">
-                                <h5 class="widget-title">پست های اخیر</h5>
-                                <div class="mt-4">
-                                    <div class="clearfix post-recent">
-                                        <div class="post-recent-thumb float-start"><a href="jvascript:void(0)"> <img
-                                                    alt="img" src="images/blog/07.jpg" class="img-fluid rounded"></a>
-                                        </div>
-                                        <div class="post-recent-content float-start"><a href="jvascript:void(0)">مشاوره
-                                                شرکتی </a><span class="text-muted mt-2">اردیبهشت 1400</span></div>
-                                    </div>
-                                    <div class="clearfix post-recent">
-                                        <div class="post-recent-thumb float-start"><a href="jvascript:void(0)"> <img
-                                                    alt="img" src="images/blog/08.jpg" class="img-fluid rounded"></a>
-                                        </div>
-                                        <div class="post-recent-content float-start"><a href="jvascript:void(0)">به
-                                                تعادل باشکوه نگاه کنید</a> <span
-                                                class="text-muted mt-2">اردیبهشت 1400</span></div>
-                                    </div>
-                                    <div class="clearfix post-recent">
-                                        <div class="post-recent-thumb float-start"><a href="jvascript:void(0)"> <img
-                                                    alt="img" src="images/blog/01.jpg" class="img-fluid rounded"></a>
-                                        </div>
-                                        <div class="post-recent-content float-start"><a href="jvascript:void(0)">تحقیقات
-                                                مالی.</a> <span class="text-muted mt-2">اردیبهشت 1400</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- پست های اخیر -->
-
-                            <!-- TAG CLOUDS -->
-                            <div class="widget mb-4 pb-2">
-                                <h5 class="widget-title">برچسب های ابری</h5>
-                                <div class="tagcloud mt-4">
-                                    <a href="jvascript:void(0)" class="rounded">کسب و کار </a>
-                                    <a href="jvascript:void(0)" class="rounded">مالی </a>
-                                    <a href="jvascript:void(0)" class="rounded">بازاریابی</a>
-                                    <a href="jvascript:void(0)" class="rounded">مدل </a>
-                                    <a href="jvascript:void(0)" class="rounded"> عروس </a>
-                                    <a href="jvascript:void(0)" class="rounded">سبک زندگی </a>
-                                    <a href="jvascript:void(0)" class="rounded">مسافرت </a>
-                                    <a href="jvascript:void(0)" class="rounded">زیبایی </a>
-                                    <a href="jvascript:void(0)" class="rounded">ویدئو </a>
-                                    <a href="jvascript:void(0)" class="rounded">صدا </a>
-                                </div>
-                            </div>
-                            <!-- TAG CLOUDS -->
-
-                            <!-- SOCIAL -->
-                            <div class="widget">
-                                <h5 class="widget-title">دنبال کردن ما</h5>
-                                <ul class="list-unstyled social-icon mb-0 mt-4">
-                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                                data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
-                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                                data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
-                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                                data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
-                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                                data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
-                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                                data-feather="github" class="fea icon-sm fea-social"></i></a></li>
-                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                                data-feather="youtube" class="fea icon-sm fea-social"></i></a></li>
-                                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                                data-feather="gitlab" class="fea icon-sm fea-social"></i></a></li>
-                                </ul><!--end icon-->
-                            </div>
-                            <!-- SOCIAL -->
-                        </div>
-                    </div>
-                </div><!--end col-->
-                <!-- END SIDEBAR -->
             </div><!--end row-->
         </div><!--end container-->
     </section><!--end section-->
     <!-- Blog End -->
 
 @endsection
-
-
-
-
 
 
 @section("last-scripts")
