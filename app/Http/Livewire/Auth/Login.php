@@ -37,12 +37,9 @@ class Login extends Component
             'email' => 'required',
             'password' => 'required',
         ]);
-        $request = Request::create('/login', 'POST', array_merge($data, ['_token' => csrf_token()]));
+        $request = Request::create(route('login'), 'POST', array_merge($data, ['_token' => csrf_token()]));
         return app()->handle($request);
-//        if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
-//            Auth::login(User::where('email', $this->email)->first(), $this->remember);
-//            return $this->redirect(route('admin.dashboard'));
-//        }
+
     }
 
     public function render()
