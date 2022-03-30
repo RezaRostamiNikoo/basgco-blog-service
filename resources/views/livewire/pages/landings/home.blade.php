@@ -1,13 +1,8 @@
 <body class="leading-normal tracking-normal text-white gradient">
 
 
-<link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+<link rel="stylesheet" href="assets/css/index.css" type="text/css"/>
 
-<style>
-    .gradient {
-        background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
-    }
-</style>
 <livewire:components.nav-menu/>
 <x-baner/>
 

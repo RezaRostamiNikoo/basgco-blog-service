@@ -15,6 +15,6 @@ class Header extends Component
     ];
     public function render()
     {
-        return view('livewire.components.header.header');
+        return view('livewire.layouts.header.header');
     }
 }

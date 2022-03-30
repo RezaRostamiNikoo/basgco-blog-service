@@ -22,5 +22,5 @@ const tailwindcss = require('tailwindcss')
 // mix.postCss('public/assets/sass/app.css', 'public/assets/css', [require("tailwindcss"),]);
 // mix.setResourceRoot(__dirname + 'resources/')
 // snip...
-mix.sass('resources/sass/app.scss', 'public/assets/css/app.css')
+mix.sass('resources/sass/index.scss', 'public/assets/css/index.css')
     .options({ postCss: [ tailwindcss('./tailwind.config.js')]})

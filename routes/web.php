@@ -4,12 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
 
-Route::get('/', \App\Http\Livewire\Pages\Landings\Home::class)->name('home');
-Route::get('/blog', \App\Http\Livewire\Pages\Landings\Home::class)->name('blog');
-Route::get('/departments', \App\Http\Livewire\Pages\Landings\Home::class)->name('departments');
-Route::get('/products', \App\Http\Livewire\Pages\Landings\Home::class)->name('products');
-Route::get('/about-us', \App\Http\Livewire\Pages\Landings\Home::class)->name('aboutus');
-Route::get('/contact-us', \App\Http\Livewire\Pages\Landings\Home::class)->name('contactus');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 // Auth Routes
@@ -20,7 +15,8 @@ Route::get('/password-request', \App\Http\Livewire\Pages\Auth\Login::class)->nam
 //
 
 Route::prefix('blogs')->name('blogs.')->group(function () {
-    Route::get('{categoryslug}/{blogslug}',  [\App\Http\Controllers\BlogController::class,'show'])->name('show');
+    Route::get('', [\App\Http\Controllers\BlogController::class, 'all'])->name('all');
+    Route::get('{categoryslug}/{blogslug}', [\App\Http\Controllers\BlogController::class, 'show'])->name('show');
 
 });
 
@@ -53,5 +49,6 @@ Route::middleware('auth:sanctum')->prefix('/admin')->name('admin.')->group(funct
     });
 
 
-
 });
+
+

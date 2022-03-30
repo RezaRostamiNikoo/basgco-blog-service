@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\File;
@@ -64,12 +65,22 @@ class Post extends Model implements HasMedia
 
     public function tags()
     {
-        return $this->morphToMany(Tag::class,'taggable','model_tags');
-    }
-    public function categories()
-    {
-        return $this->morphToMany(Category::class,'categorizable','model_categories');
+        return $this->morphToMany(Tag::class, 'taggable', 'model_tags');
     }
 
+    public function categories()
+    {
+        return $this->morphToMany(Category::class, 'categorizable', 'model_categories');
+    }
+
+    public function likes()
+    {
+        return $this->morphToMany(Like::class, 'taggable', 'model_tags');
+    }
+
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(User::class, "author_id", "id");
+    }
 
 }
