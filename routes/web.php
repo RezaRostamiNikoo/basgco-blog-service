@@ -16,7 +16,7 @@ Route::get('/password-request', \App\Http\Livewire\Pages\Auth\Login::class)->nam
 
 //
 
-Route::prefix('blogs')->name('blogs.')->group(function () {
+Route::prefix('blog')->name('blogs.')->group(function () {
     Route::get('', [\App\Http\Controllers\BlogController::class, 'all'])->name('all');
     Route::get('{blog}', [\App\Http\Controllers\BlogController::class, 'show'])->name('show');
 

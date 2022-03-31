@@ -3,22 +3,27 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
-                <a href="#" class="logo-footer">
-                    <img src="/assets/images/logo-light.png" height="24" alt="">
-                </a>
-                <p class="mt-4">کار با لنـدریــک را شروع کنید که می تواند همه چیزهایی را که برای ایجاد آگاهی ، ایجاد
-                    ترافیک ، اتصال به آن نیاز دارید فراهم کند.</p>
+                <h5 class="text-light footer-head">شرکت برج افرازان شاهین گستر</h5>
+                {{--                <a href="#" class="logo-footer">--}}
+                {{--                    <img src="/assets/images/logo-light.png" height="24" alt="">--}}
+                {{--                </a>--}}
+                <p class="mt-4">با ما در ارتباط باشید</p>
                 <ul class="list-unstyled social-icon foot-social-icon mb-0 mt-4">
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="facebook"
-                                                                                                 class="fea icon-sm fea-social"></i></a>
+                    {{--                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="facebook"--}}
+                    {{--                                                                                                 class="fea icon-sm fea-social"></i></a>--}}
+                    {{--                    </li>--}}
+                    <li class="list-inline-item">
+                        <a href="javascript:void(0)" class="rounded">
+                            <i data-feather="instagram" class="fea icon-sm fea-social"></i>
+                        </a>
                     </li>
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="twitter"
-                                                                                                 class="fea icon-sm fea-social"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="linkedin"
-                                                                                                 class="fea icon-sm fea-social"></i></a>
+                    {{--                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="twitter"--}}
+                    {{--                                                                                                 class="fea icon-sm fea-social"></i></a>--}}
+                    {{--                    </li>--}}
+                    <li class="list-inline-item">
+                        <a href="javascript:void(0)" class="rounded">
+                            <i data-feather="phone" class="fea icon-sm fea-social"></i>
+                        </a>
                     </li>
                 </ul><!--end icon-->
             </div><!--end col-->
@@ -26,38 +31,38 @@
             <div class="col-lg-2 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                 <h5 class="text-light footer-head">شرکت </h5>
                 <ul class="list-unstyled footer-list mt-4">
-                    <li><a href="page-aboutus.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> درباره
+                    <li><a href="" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> درباره
                             ما </a></li>
-                    <li><a href="page-services.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> خدمات
-                        </a></li>
-                    <li><a href="page-team.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> تیم </a>
+                    {{--                    <li><a href="page-services.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> خدمات--}}
+                    {{--                        </a></li>--}}
+                    <li><a href="" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> تیم </a>
                     </li>
-                    <li><a href="page-pricing.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> قیمت
-                            گذاری </a></li>
-                    <li><a href="page-portfolio-modern.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i>
-                            پروژه </a></li>
-                    <li><a href="page-jobs.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> مشاغل </a>
-                    </li>
-                    <li><a href="page-blog-grid.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> وبلاگ
+                    {{--                    <li><a href="page-pricing.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> قیمت--}}
+                    {{--                            گذاری </a></li>--}}
+                    {{--                    <li><a href="page-portfolio-modern.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i>--}}
+                    {{--                            پروژه </a></li>--}}
+                    {{--                    <li><a href="page-jobs.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> مشاغل </a>--}}
+                    {{--                    </li>--}}
+                    <li><a href="{{route('blogs.all')}}" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> وبلاگ
                         </a></li>
-                    <li><a href="auth-cover-login.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> ورود
-                        </a></li>
+                    {{--                    <li><a href="auth-cover-login.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> ورود--}}
+                    {{--                        </a></li>--}}
                 </ul>
             </div><!--end col-->
 
             <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                 <h5 class="text-light footer-head">لینک های مفید </h5>
                 <ul class="list-unstyled footer-list mt-4">
-                    <li><a href="page-terms.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> خدمات سایت
+                    <li><a href="" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> خدمات سایت
                         </a></li>
-                    <li><a href="page-privacy.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> حریم
+                    <li><a href="" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> حریم
                             خصوصی </a></li>
-                    <li><a href="documentation.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> مستند
-                        </a></li>
-                    <li><a href="changelog.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> تغییرات
-                        </a></li>
-                    <li><a href="components.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> اجزاء </a>
-                    </li>
+                    {{--                    <li><a href="documentation.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> مستند--}}
+                    {{--                        </a></li>--}}
+                    {{--                    <li><a href="changelog.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> تغییرات--}}
+                    {{--                        </a></li>--}}
+                    {{--                    <li><a href="components.html" class="text-foot"><i class="uil uil-angle-left-b me-1"></i> اجزاء </a>--}}
+                    {{--                    </li>--}}
                 </ul>
             </div><!--end col-->
 
