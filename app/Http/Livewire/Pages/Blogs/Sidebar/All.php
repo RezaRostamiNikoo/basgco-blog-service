@@ -13,7 +13,8 @@ class All extends Component
     {
         $categories = Category::withCount(['posts'])->get();
         $tags = Tag::all();
-        $posts = Post::orderBy('created_at')->take(3)->get();
+        $posts = Post::where('post_status', '<>', 'preparing')->orderBy('created_at')->take(3)->get();
+
         return view('livewire.pages.blogs.sidebar.all', compact('categories', 'posts','tags'));
     }
 }

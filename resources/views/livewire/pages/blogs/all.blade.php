@@ -10,7 +10,7 @@
                         <div class="overlay rounded-top bg-dark"></div>
                     </div>
                     <div class="card-body content">
-                        <h5><a href="/blogs/{{$post->slug}}"
+                        <h5><a href="/blog/{{$post->slug}}"
                                class="card-title title text-dark">{{$post->title}}</a></h5>
                         <div class="post-meta d-flex justify-content-between mt-3">
                             <ul class="list-unstyled mb-0">
@@ -36,7 +36,7 @@
                 </div>
             </div><!--end col-->
         @endforeach
-            {{ $posts->links('layouts.pagination.bootstrap-4') }}
+        {{ $posts->links('layouts.pagination.bootstrap-4') }}
 
 
     </div><!--end row-->

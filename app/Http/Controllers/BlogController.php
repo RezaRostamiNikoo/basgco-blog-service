@@ -13,9 +13,9 @@ class BlogController extends Controller
         return view("pages.blogs.all");
     }
 
-    public function show(Request $request, $slug)
+    public function show(Request $request, $blog) // blog as slug
     {
-        $post = Post::where('slug', $slug)->first();
+        $post = Post::where('slug', $blog)->with(['categories'])->first();
         if (!isset($post)) throw new NotFoundHttpException("مقاله مورد نظر یافت نشد");
         return view("pages.blogs.show", ['post' => $post]);
     }

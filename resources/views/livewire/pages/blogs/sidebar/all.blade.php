@@ -21,7 +21,7 @@
                 <ul class="list-unstyled mt-4 mb-0 blog-categories">
                     @foreach($categories as $cat)
                         <li>
-                            <a href="jvascript:void(0)">{{$cat->name}}</a>
+                            <a href="jvascript:void(0)">{{$cat->title}}</a>
                             <span class="float-end">{{$cat->posts_count}}</span>
                         </li>
                     @endforeach
@@ -59,33 +59,33 @@
                 <h5 class="widget-title">برچسب های ابری</h5>
                 <div class="tagcloud mt-4">
                     @foreach($tags as $tag)
-                        <a href="jvascript:void(0)" class="rounded">{{$tag->name}}</a>
+                        <a href="jvascript:void(0)" class="rounded">{{$tag->title}}</a>
                     @endforeach
                 </div>
             </div>
             <!-- TAG CLOUDS -->
 
-            <!-- SOCIAL -->
-            <div class="widget">
-                <h5 class="widget-title">دنبال کردن ما</h5>
-                <ul class="list-unstyled social-icon mb-0 mt-4">
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                data-feather="github" class="fea icon-sm fea-social"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                data-feather="youtube" class="fea icon-sm fea-social"></i></a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i
-                                data-feather="gitlab" class="fea icon-sm fea-social"></i></a></li>
-                </ul><!--end icon-->
-            </div>
-            <!-- SOCIAL -->
+{{--            <!-- SOCIAL -->--}}
+{{--            <div class="widget">--}}
+{{--                <h5 class="widget-title">دنبال کردن ما</h5>--}}
+{{--                <ul class="list-unstyled social-icon mb-0 mt-4">--}}
+{{--                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i--}}
+{{--                                data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>--}}
+{{--                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i--}}
+{{--                                data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>--}}
+{{--                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i--}}
+{{--                                data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>--}}
+{{--                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i--}}
+{{--                                data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>--}}
+{{--                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i--}}
+{{--                                data-feather="github" class="fea icon-sm fea-social"></i></a></li>--}}
+{{--                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i--}}
+{{--                                data-feather="youtube" class="fea icon-sm fea-social"></i></a></li>--}}
+{{--                    <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i--}}
+{{--                                data-feather="gitlab" class="fea icon-sm fea-social"></i></a></li>--}}
+{{--                </ul><!--end icon-->--}}
+{{--            </div>--}}
+{{--            <!-- SOCIAL -->--}}
         </div>
     </div>
 </div><!--end col-->

@@ -22,7 +22,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12 text-center">
                     <div class="page-next-level">
-                        <h2> برنامه های خود را به روش خود طراحی کنید </h2>
+                        <h2>{{$post->title}}</h2>
+                        <h5>{{$post->subtitle}}</h5>
                         <ul class="list-unstyled mt-4">
                             <li class="list-inline-item h6 user text-muted me-2"><i class="mdi mdi-account"></i>
                                 {{$post->author->name}}
@@ -35,7 +36,7 @@
                             <nav aria-label="breadcrumb" class="d-inline-block">
                                 <ul class="breadcrumb bg-white rounded shadow mb-0">
                                     <li class="breadcrumb-item"><a href="{{route('home')}}">خانه</a></li>
-                                    <li class="breadcrumb-item"><a href="{{route('blogs.all')}}">بلاگ</a></li>
+                                    <li class="breadcrumb-item"><a href="{{route('blogs.all')}}">وبلاگ</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">جزئیات وبلاگ</li>
                                 </ul>
                             </nav>
@@ -68,8 +69,13 @@
                         <div class="card-body content">
                             <h6>
                                 <i class="mdi mdi-tag text-primary me-1"></i>
-                                <a href="javscript:void(0)" class="text-primary">نرم افزار</a>,
-                                <a href="javscript:void(0)" class="text-primary">اپلیکیشن</a>
+                                @foreach($post->categories as $cat)
+                                    <a href="javscript:void(0)" class="text-primary">
+                                        {{$cat->title}}
+                                    </a>
+                                    @if($loop->last) @else , @endif
+                                @endforeach
+
                             </h6>
 
                             {!! $post->content !!}

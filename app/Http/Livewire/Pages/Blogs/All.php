@@ -12,6 +12,8 @@ class All extends Component
 
     public function render()
     {
-        return view('livewire.pages.blogs.all', ['posts' => Post::paginate(10)]);
+        $posts = Post::where('post_status', '<>', 'preparing')->orderBy('created_at', 'DESC')->paginate(10);
+
+        return view('livewire.pages.blogs.all', ['posts' => $posts]);
     }
 }

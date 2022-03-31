@@ -27,10 +27,8 @@
                         <div class="page-next">
                             <nav aria-label="breadcrumb" class="d-inline-block">
                                 <ul class="breadcrumb bg-white rounded shadow mb-0">
-                                    <li class="breadcrumb-item"><a href="index.html">لنـدریـک </a></li>
-                                    <li class="breadcrumb-item"><a href="#">صفحه </a></li>
-                                    <li class="breadcrumb-item"><a href="#">وبلاگ </a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">وبلاگ با سایدبار</li>
+                                    <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">وبلاگ</li>
                                 </ul>
                             </nav>
                         </div>
