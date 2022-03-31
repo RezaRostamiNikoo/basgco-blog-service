@@ -69,27 +69,10 @@
             <div class="col-lg-3 col-md-4 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                 <h5 class="text-light footer-head">خبرنامه </h5>
                 <p class="mt-4">ثبت نام کنید و آخرین نکات را از طریق ایمیل دریافت کنید.</p>
-                <form>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="foot-subscribe mb-3">
-                                <label class="form-label">ایمیل خود را بنویسید <span
-                                        class="text-danger">*</span></label>
-                                <div class="form-icon position-relative">
-                                    <i data-feather="mail" class="fea icon-sm icons"></i>
-                                    <input type="email" name="email" id="emailsubscribe"
-                                           class="form-control ps-5 rounded" placeholder="ایمیل شما: " required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="d-grid">
-                                <input type="submit" id="submitsubscribe" name="send" class="btn btn-soft-primary"
-                                       value="خبرنامه">
-                            </div>
-                        </div>
-                    </div>
-                </form>
+
+                <livewire:components.news-subscribing-form :type="'type-footer'" />
+
+
             </div><!--end col-->
         </div><!--end row-->
     </div><!--end container-->

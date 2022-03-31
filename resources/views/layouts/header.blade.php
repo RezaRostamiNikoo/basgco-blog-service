@@ -3,7 +3,7 @@
     <div class="container">
         <!-- Logo container-->
         <div>
-            <a class="logo" href="index.html">
+            <a class="logo" href="{{route('home')}}">
                 <div class="l-dark text-dark">برج افرازان شاهین گستر</div>
                 <div class="l-light text-white">برج افرازان شاهین گستر</div>
 

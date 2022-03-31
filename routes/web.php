@@ -54,3 +54,4 @@ Route::middleware('auth:sanctum')->prefix('/admin')->name('admin.')->group(funct
 });
 
 
+Route::get('news/verifying-email/{token}', [\App\Http\Controllers\NewsLetterController::class, 'verify'])->name('news-veridying');

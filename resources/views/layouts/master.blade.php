@@ -14,6 +14,7 @@
     @yield("last-styles")
 
     @yield("head-scripts")
+    <livewire:styles />
 </head>
 
 <body>
@@ -28,6 +29,8 @@
 @yield("first-scripts")
 @include("layouts.scripts")
 @yield("last-scripts")
+<livewire:scripts />
+
 </body>
 
 </html>

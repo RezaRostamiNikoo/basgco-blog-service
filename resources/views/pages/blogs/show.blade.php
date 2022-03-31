@@ -3,14 +3,7 @@
 @section("title","بلاگ | برج افرازان شاهین گستر")
 
 @section("last-styles")
-    <!-- Bootstrap -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <!-- Icons -->
-    <link href="/assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="/assets/css/line.css">
-    <!-- Main Css -->
-    <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt"/>
-    <link href="/assets/css/colors/default.css" rel="stylesheet" id="color-opt">
+
 @endsection
 
 @section("content")
@@ -23,7 +16,7 @@
                 <div class="col-lg-12 text-center">
                     <div class="page-next-level">
                         <h2>{{$post->title}}</h2>
-                        <h5>{{$post->subtitle}}</h5>
+                        <h5>{{$post->sub_title}}</h5>
                         <ul class="list-unstyled mt-4">
                             <li class="list-inline-item h6 user text-muted me-2"><i class="mdi mdi-account"></i>
                                 {{$post->author->name}}
@@ -335,26 +328,4 @@
         </div><!--end container-->
     </section><!--end section-->
     <!-- Blog End -->
-
-
-
-
-
-
-@endsection
-
-
-@section("last-scripts")
-    <!-- javascript -->
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <!-- Icons -->
-    <script src="/assets/js/feather.min.js"></script>
-    <!-- Switcher -->
-    <script src="/assets/js/switcher.js"></script>
-    <!-- Main Js -->
-    <script
-        src="/assets/js/plugins.init.js"></script><!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
-    <script
-        src="/assets/js/app.js"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
-
 @endsection

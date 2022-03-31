@@ -3,18 +3,9 @@
 @section("title","صفحه اصلی | برج افرازان شاهین گستر")
 @section("last-styles")
 
-    <!-- Bootstrap -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- tobii css -->
-    <link href="/assets/css/tobii.min.css" rel="stylesheet" type="text/css" />
-    <!-- Icons -->
-    <link href="/assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="/assets/css/line.css">
+
     <!-- Slider -->
     <link rel="stylesheet" href="/assets/css/tiny-slider.css"/>
-    <!-- Main Css -->
-    <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt" />
-    <link href="/assets/css/colors/default.css" rel="stylesheet" id="color-opt">
 
 @endsection
 @section("content")
@@ -26,10 +17,8 @@
             <div class="row align-items-center position-relative mt-5" style="z-index: 1;">
                 <div class="col-lg-6 col-md-12">
                     <div class="title-heading mt-4 text-center text-lg-start">
-                        <h1 class="heading mb-3 title-dark text-white">بهترین نرم افزار برای مانیتور کار شما</h1>
-                        <p class="para-desc text-white-50">کمپین خود را راه اندازی کنید و از تخصص ما در زمینه طراحی و
-                            مدیریت
-                            صفحه بوت استرپ v5 html تبدیل محور بهره مند شوید.</p>
+                        <h1 class="heading mb-3 title-dark text-white">نرم افزار صورت وضعیت نویسی بسگکو</h1>
+                        <p class="para-desc text-white-50">رایگان دانلود کنید و از امکانات آن بهره مند شوید</p>
                         <div class="mt-4">
                             <a href="javascript:void(0)" class="btn btn-light"><i class="uil uil-file-download"></i>
                                 اکنون
@@ -69,10 +58,9 @@
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
                     <div class="section-title mb-4 pb-2">
-                        <h4 class="title mb-4">راه حل ها </h4>
-                        <p class="text-muted para-desc mx-auto mb-0">شروع به کار با <span class="text-primary fw-bold"> لنـدریـک  </span>
-                            که می تواند هر آنچه را که شما برای ایجاد آگاهی ، ایجاد ترافیک ، اتصال به آن نیاز دارید فراهم
-                            کند.</p>
+                        <h4 class="title mb-4">ویژگی ها</h4>
+                        <p class="text-muted para-desc mx-auto mb-0">شروع به کار با <span class="text-primary fw-bold"> نرم افزار  </span>
+                            میتواند نیاز های شما را در انجام امور صورت وضعیت نویسی تامین کند</p>
                     </div>
                 </div><!--end col-->
             </div><!--end row-->
@@ -85,11 +73,9 @@
                         </div>
 
                         <div class="content mt-4">
-                            <h5>خدمات سئو </h5>
-                            <p class="text-muted mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
-                                لازم
-                                است.</p>
+                            <h5>سادگی</h5>
+                            <p class="text-muted mb-0">این نرم افزار به گونه ای طراحی شده تا کاربران به سادگی از امکانات
+                                آن بهره مند شوند.</p>
                         </div>
                     </div>
                 </div><!--end col-->
@@ -101,10 +87,9 @@
                         </div>
 
                         <div class="content mt-4">
-                            <h5>ایمیل مارکتینگ</h5>
-                            <p class="text-muted mb-0">گفته می شود ، یک محقق لاتین با تأسیس واژه غیرمعمول ، اصل متن را
-                                تأسیس
-                                کرد.</p>
+                            <h5>پشتیبان گیری</h5>
+                            <p class="text-muted mb-0">قابلیت گرفتن نسخه پشتیلان از اطلاعات به منظور حفاظت از اطلاعات و
+                                انتقال فایل ها به سیستم های دیگر</p>
                         </div>
                     </div>
                 </div><!--end col-->
@@ -178,8 +163,8 @@
                 </div><!--end col-->
                 <div class="col-12 text-center pt-2">
                     <div class="alert alert-light alert-pills shadow" role="alert">
-                        <span class="badge rounded-pill bg-primary me-1">دانلود </span>
-                        <span class="content"> مورد اعتماد بهترین های جهان <i class="uil uil-cloud-download"></i></span>
+                        <span class="badge rounded-pill bg-primary me-1">منتظر باشید </span>
+                        <span class="content">به زودی نسخه اپلیکیشن موبایل در دو نسخه اندروید و iox منتشر خواد شد</span>
                     </div>
                 </div><!--end col-->
             </div><!--end row-->
@@ -190,18 +175,15 @@
             <div class="card rounded bg-light shadow border-0">
                 <div class="card-body">
                     <div class="row align-items-center">
-                        <div class="col-sm-7">
+                        <div class="col-12 col-lg-7 mb-5 mb-lg-0">
                             <div class="text-sm-start">
-                                <h5 class="mb-0">شروع به ساختن وب سایت های زیبا مبتنی بر بلوک.</h5>
+                                <h5 class="mb-0">برای اطلاع از آخرین اخبار و محصولات ایمیل خود را وارد کنید</h5>
                             </div>
                         </div><!--end col-->
 
-                        <div class="col-sm-5 mt-4 mt-sm-0">
-                            <div class="text-sm-end">
-                                <a href="javascript:void(0)" class="btn btn-outline-primary"><i
-                                        class="uil uil-file-bookmark-alt"></i> شروع کنید </a>
-                            </div>
-                        </div><!--end col-->
+                        <div class="col-12 col-lg-5">
+                            <livewire:components.news-subscribing-form :type="'type-1'"/>
+                        </div>
                     </div><!--end row -->
                 </div>
             </div>
@@ -536,30 +518,4 @@
         </div><!--end container-->
     </section>
     <!--  -->
-
-@endsection
-
-
-
-
-
-
-@section("last-scripts")
-
-    <!-- javascript -->
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <!-- SLIDER -->
-    <script src="/assets/js/tiny-slider.js"></script>
-    <!-- tobii js -->
-    <script src="/assets/js/tobii.min.js"></script>
-    <!-- Icons -->
-    <script src="/assets/js/feather.min.js"></script>
-    <!-- Switcher -->
-    <script src="/assets/js/switcher.js"></script>
-    <!-- Main Js -->
-    <script src="/assets/js/plugins.init.js"></script>
-    <!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
-    <script src="/assets/js/app.js"></script>
-    <!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
-
 @endsection
