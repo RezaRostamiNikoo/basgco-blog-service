@@ -14,24 +14,16 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Permission\Traits\HasPermissions;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements HasMedia
+class Admin extends Authenticatable implements HasMedia
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles, HasPermissions, InteractsWithMedia;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-    protected $guard = 'web';
 
+
+    protected $fillable = ['name', 'email', 'password', 'is_super'];
+    protected $hidden = ['password', 'remember_token'];
+    protected $casts = ['email_verified_at' => 'datetime'];
+    protected $guard = 'admin';
 
     public function registerMediaCollections(): void
     {
@@ -53,10 +45,11 @@ class User extends Authenticatable implements HasMedia
             ->height(198)
 //            ->sharpen(10),
             ->performOnCollections('avatars');
-
     }
 
+    public function posts(): HasMany
+    {
 
-
-
+        return $this->hasMany(Post::class,"author_id","id");
+    }
 }

@@ -29,8 +29,8 @@ class NewsSubscribingForm extends Component
             'email' => $this->email,
             'token' => $token
         ]);
-        Mail::to($this->email)->send(new VerifyingMail($token));
-        $this->success_message = "شما در خبرنامه عضو شدید لطفا برای تایید ایمیل خود به صندوق ایمیل ها دریافتی مراجعه کنید";
+//        Mail::to($this->email)->queue(new VerifyingMail($token));
+        $this->success_message = "ایمیل شما با موفقیت در خبرنامه بسگکو ثبت شد.";
 
 
     }

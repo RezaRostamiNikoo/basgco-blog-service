@@ -37,7 +37,8 @@ class Login extends Component
             'email' => 'required',
             'password' => 'required',
         ]);
-        $request = Request::create(route('login'), 'POST', array_merge($data, ['_token' => csrf_token()]));
+
+        $request = Request::create(route('login', ['auth_guard' => 'admin']), 'POST', array_merge($data, ['_token' => csrf_token()]));
         return app()->handle($request);
 
     }

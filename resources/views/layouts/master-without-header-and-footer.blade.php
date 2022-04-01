@@ -7,9 +7,9 @@
     <link rel="shortcut icon" href="/assets/images/favicon.ico">
     @yield("meta-tags")
 
-{{--    @yield("first-styles")--}}
+    @yield("first-styles")
 
-{{--    @include("layouts.head-css")--}}
+    @include("layouts.head-css")
 
     @yield("last-styles")
 
@@ -26,7 +26,7 @@
 
 
 @yield("first-scripts")
-{{--@include("layouts.scripts")--}}
+@include("layouts.scripts")
 @yield("last-scripts")
 <livewire:scripts />
 
