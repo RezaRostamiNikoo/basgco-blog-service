@@ -29,19 +29,17 @@ Route::middleware('auth:sanctum')->prefix('/admin')->name('admin.')->group(funct
 
     Route::prefix('/blogs')->name('blogs.')->group(function () {
         Route::get('/', [\App\Http\Controllers\Admin\BlogController::class, 'index'])->name('index');
-        Route::get('/create', \App\Http\Livewire\Admin\Blogs\NewBlog::class)->name('create');
+        Route::get('/create', \App\Http\Livewire\Admin\Pages\Blogs\NewBlog::class)->name('create');
         Route::get('/{blog}/edit', [\App\Http\Controllers\Admin\BlogController::class, 'edit'])->name('edit');
     });
 
     Route::prefix('/categories')->name('categories.')->group(function () {
-//        Route::get('/', \App\Http\Livewire\Admin\Blogs\BlogsList::class)->name('list');
-        Route::get('/create', \App\Http\Livewire\Admin\Categories\CreateCategory::class)->name('create');
-
+        Route::get('', [\App\Http\Controllers\Admin\CategoryController::class,'list'])->name('list');
     });
 
     Route::prefix('/tags')->name('tags.')->group(function () {
 //        Route::get('/', \App\Http\Livewire\Admin\Blogs\BlogsList::class)->name('list');
-        Route::get('/create', \App\Http\Livewire\Admin\Tags\CreateTag::class)->name('create');
+        Route::get('/create', \App\Http\Livewire\Admin\Pages\Tags\CreateTag::class)->name('create');
 
     });
 

@@ -5,28 +5,37 @@
         <div>
             <a class="logo" href="{{route('home')}}">
                 <div class="l-dark text-dark">برج افرازان شاهین گستر</div>
-                <div class="l-light text-white">برج افرازان شاهین گستر</div>
-
+                <div class="l-light @if($menutype == 'light')text-white @else text-dark @endif">برج افرازان شاهین گستر
+                </div>
             </a>
         </div>
         <div class="buy-button">
-            @auth
+            @if(\Illuminate\Support\Facades\Auth::guard('web')->user() || \Illuminate\Support\Facades\Auth::guard('admin')->user())
                 <a href="{{route("admin.dashboard")}}">
                     <div class="btn btn-primary login-btn-primary">داشبورد</div>
-                    <div class="btn btn-light login-btn-light">داشبورد</div>
+                    <div
+                        class="btn @if($menutype == 'light') btn-light @else btn-primary  @endif login-btn-light">
+                        داشبورد
+                    </div>
                 </a>
                 <a href="{{route("logout")}}">
                     <div class="btn btn-primary login-btn-primary">خروج</div>
-                    <div class="btn btn-light login-btn-light">خروج</div>
+                    <div
+                        class="btn @if($menutype == 'light') btn-light @else btn-primary  @endif login-btn-light"> خروج
+                    </div>
                 </a>
 
 
             @else
                 <a href="{{route("login")}}">
                     <div class="btn btn-primary login-btn-primary">ورود</div>
-                    <div class="btn btn-light login-btn-light">ورود</div>
+                    <div
+                        class="btn @if($menutype == 'light') btn-light @else btn-primary  @endif login-btn-light"
+                    >
+                        ورود
+                    </div>
                 </a>
-            @endauth
+            @endif
         </div><!--end login button-->
         <!-- End Logo container-->
         <div class="menu-extras">
@@ -45,7 +54,7 @@
 
         <div id="navigation">
             <!-- Navigation Menu-->
-            <ul class="navigation-menu nav-light">
+            <ul class="navigation-menu @if($menutype == 'light')nav-light @endif">
                 <li><a href="{{route("home")}}" class="sub-menu-item">صفحه اصلی </a></li>
 
                 <li class="has-submenu parent-parent-menu-item">

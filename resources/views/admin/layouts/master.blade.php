@@ -40,7 +40,6 @@
 
     <!-- JAVASCRIPT -->
     @include('admin.layouts.vendor-scripts')
-    <livewire:scripts/>
 
     </body>
 

@@ -1,40 +1,33 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Components;
+namespace App\Http\Livewire\Admin\Pages\Categories;
 
 use App\Models\Category;
 use Livewire\Component;
 
-class CreateCategoryForm extends Component
+class CategoryList extends Component
 {
     public $title ='';
-    public $meta_title='';
     public $slug='';
-    public $content='';
 
 
-    public function mount($title = '', $slug = '', $meta_title = '', $content = '')
+
+    public function mount($title = '', $slug = '')
     {
         $this->title = $title;
         $this->slug = $slug;
-        $this->meta_title = $meta_title;
-        $this->content = $content;
     }
 
     public function submit()
     {
         $this->validate([
             'title' => 'required|unique:categories,title',
-            'meta_title' => 'required',
             'slug' => 'required|unique:categories,slug',
-            'content' => 'required',
         ]);
 
         $result = Category::create([
             'title' => $this->title,
-            'meta_title' => $this->meta_title,
             'slug' => $this->slug,
-            'content' => $this->content,
         ]);
         $this->reset();
     }
@@ -48,6 +41,6 @@ class CreateCategoryForm extends Component
     public function render()
     {
         $categories = Category::with('posts')->get();
-        return view('livewire.admin.components.create-category-form', compact('categories'));
+        return view('livewire.admin.pages.categories.category-list', compact('categories'));
     }
 }

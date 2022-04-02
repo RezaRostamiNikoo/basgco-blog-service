@@ -43,10 +43,17 @@
         });
     });
 </script>
+<livewire:scripts/>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<x-livewire-alert::scripts />
 
 @yield('script')
 
 <!-- App js -->
 <script src="{{ URL::asset('admin/assets/js/app.min.js')}}"></script>
-
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 @yield('script-bottom')

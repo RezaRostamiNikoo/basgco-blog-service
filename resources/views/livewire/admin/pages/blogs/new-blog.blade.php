@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h4 class="card-title">مقاله جدید</h4>
                     <hr/>
-                    <livewire:admin.components.create-post-form :post="$post"/>
+                    <livewire:admin.pages.blogs.create-post-form :post="$post"/>
                 </div>
             </div>
         </div>

@@ -34,7 +34,7 @@
                                      alt="" class="img-thumbnail rounded-circle">
                             </div>
                             <h5 class="font-size-15 text-truncate">{{ \Illuminate\Support\Str::ucfirst(\Illuminate\Support\Facades\Auth::user()->name) }}</h5>
-                            <p class="text-muted mb-0 text-truncate">عنوان کاری</p>
+                            <p class="text-muted mb-0 text-truncate">{{\Illuminate\Support\Facades\Auth::user()->getRoleNames()[0]}}</p>
                         </div>
 
                         <div class="col-sm-8">

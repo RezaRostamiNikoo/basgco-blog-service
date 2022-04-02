@@ -4,18 +4,22 @@ namespace App\Http\Livewire\Components;
 
 use App\Mail\Subscribers\VerifyingMail;
 use App\Models\NewsSubscriber;
+use App\Traits\WithRateLimiter;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Livewire\Component;
 
 class NewsSubscribingForm extends Component
 {
+    use WithRateLimiter;
+
     public $type;
     public $email;
     public $success_message = null;
 
     public function submit()
     {
+//        $this->rateLimit(5,60,"news-subscribing");
         $this->success_message = null;
         $this->validate([
             'email' => 'required|email|unique:news_subscribers,email'

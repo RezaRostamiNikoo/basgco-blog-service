@@ -10,26 +10,37 @@
                         <div class="overlay rounded-top bg-dark"></div>
                     </div>
                     <div class="card-body content">
-                        <h5><a href="/blog/{{$post->slug}}"
-                               class="card-title title text-dark">{{$post->title}}</a></h5>
+                        <h5>
+                            <a href="/blog/{{$post->slug}}" class="card-title title text-dark">
+                                {{$post->title}}
+                            </a>
+                        </h5>
                         <div class="post-meta d-flex justify-content-between mt-3">
                             <ul class="list-unstyled mb-0">
-                                <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)"
-                                                                          class="text-muted like"><i
-                                            class="uil uil-heart me-1"></i>33</a></li>
-                                <li class="list-inline-item"><a href="javascript:void(0)"
-                                                                class="text-muted comments"><i
-                                            class="uil uil-comment me-1"></i>08</a></li>
+                                <li class="list-inline-item me-2 mb-0">
+                                    <a href="javascript:void(0)" class="text-muted like">
+                                        <i class="uil uil-heart me-1"></i>
+                                        33
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript:void(0)" class="text-muted comments">
+                                        <i class="uil uil-comment me-1"></i>
+                                        08
+                                    </a>
+                                </li>
                             </ul>
-                            <a href="/blogs/{{$post->slug}}" class="text-muted readmore">ادامه
-                                مطلب <i
-                                    class="uil uil-angle-left-b align-middle"></i></a>
+                            <a href="/blog/{{$post->slug}}" class="text-muted readmore">
+                                ادامه مطلب
+                                <i class="uil uil-angle-left-b align-middle"></i>
+                            </a>
                         </div>
                     </div>
                     <div class="author">
                         <small class="text-light user d-block"><i class="uil uil-user"></i>{{$post->author->name}}
                         </small>
-                        <small class="text-light date"><i class="uil uil-calendar-alt"></i>
+                        <small class="text-light date">
+                            <i class="uil uil-calendar-alt"></i>
                             {{\Morilog\Jalali\Jalalian::forge($post->created_at)->format('%d  %B %Y')}}
                         </small>
                     </div>

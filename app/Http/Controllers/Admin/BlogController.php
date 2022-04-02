@@ -19,4 +19,9 @@ class BlogController extends Controller
         $post = Post::where('slug', $slug)->first();
         return view("admin.pages.blogs.edit", ['post' => $post]);
     }
+
+    public function create(Request $request)
+    {
+        return view();
+    }
 }

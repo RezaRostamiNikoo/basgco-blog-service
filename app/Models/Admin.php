@@ -19,7 +19,6 @@ class Admin extends Authenticatable implements HasMedia
     use HasApiTokens, HasFactory, Notifiable, HasRoles, HasPermissions, InteractsWithMedia;
 
 
-
     protected $fillable = ['name', 'email', 'password', 'is_super'];
     protected $hidden = ['password', 'remember_token'];
     protected $casts = ['email_verified_at' => 'datetime'];
@@ -49,7 +48,6 @@ class Admin extends Authenticatable implements HasMedia
 
     public function posts(): HasMany
     {
-
-        return $this->hasMany(Post::class,"author_id","id");
+        return $this->hasMany(Post::class, "author_id", "id")->where('post_status', '<>', 'preparing');
     }
 }

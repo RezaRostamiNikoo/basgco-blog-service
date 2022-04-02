@@ -18,8 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->foreignId('parent_id')->nullable()->constrained('categories');
             $table->string('title')->unique();
             $table->string('slug')->unique();
-            $table->string('meta_title');
-            $table->text('content');
+            $table->string('meta_title')->nullable();
+            $table->text('meta_content')->nullable();
             $table->timestamps();
         });
     }

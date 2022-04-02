@@ -1,4 +1,4 @@
-@extends("layouts.master")
+@extends("layouts.master",['menutype'=>'dark'])
 
 @section("title","بلاگ | برج افرازان شاهین گستر")
 
@@ -44,9 +44,9 @@
     <section class="section">
         <div class="container">
             <div class="row">
-                <livewire:pages.blogs.all />
+                <livewire:pages.blogs.all/>
 
-                <livewire:pages.blogs.sidebar.all />
+                <livewire:pages.blogs.sidebar.all/>
 
 
             </div><!--end row-->

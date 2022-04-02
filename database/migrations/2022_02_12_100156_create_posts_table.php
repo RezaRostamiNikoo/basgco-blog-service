@@ -18,10 +18,10 @@ class CreatePostsTable extends Migration
             $table->foreignId('author_id');
             $table->foreignId('parent_id')->nullable();
             $table->string('meta_title')->nullable();
+            $table->string('excerpt')->nullable();
             $table->string('title')->unique()->nullable();
             $table->string('sub_title')->unique()->nullable();
             $table->string('slug')->unique()->nullable();
-            $table->string('excerpt')->nullable();
             $table->longText('content')->nullable();
 
             $table->string('post_status')->default('preparing');

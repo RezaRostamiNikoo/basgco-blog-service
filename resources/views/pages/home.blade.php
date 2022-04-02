@@ -1,4 +1,4 @@
-@extends("layouts.master")
+@extends("layouts.master",['menutype'=>'light'])
 
 @section("title","صفحه اصلی | برج افرازان شاهین گستر")
 @section("last-styles")

@@ -14,12 +14,12 @@
     @yield("last-styles")
 
     @yield("head-scripts")
-    <livewire:styles />
+    <livewire:styles/>
 </head>
 
 <body>
 
-@include('layouts.header')
+@include('layouts.header',['menutype'=>$menutype])
 
 @yield("content")
 
@@ -29,7 +29,7 @@
 @yield("first-scripts")
 @include("layouts.scripts")
 @yield("last-scripts")
-<livewire:scripts />
+<livewire:scripts/>
 
 </body>
 

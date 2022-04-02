@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Tags;
+namespace App\Http\Livewire\Admin\Pages\Tags;
 
 use Livewire\Component;
 

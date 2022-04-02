@@ -18,10 +18,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name' => 'admin',
-            'email' => 'info@basgco.ir',
-            'password' => bcrypt('password')
-        ]);
+
     }
 }

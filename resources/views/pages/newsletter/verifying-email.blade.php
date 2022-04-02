@@ -1,18 +1,10 @@
-@extends('layouts.master')
+@extends("layouts.master",['menutype'=>'dark'])
 
 
 @section("title","صفحه تایید ایمیل خبرنامه | بسگکو")
 
 @section('last-styles')
-    <style>
-        header{
-            background-color: #202942!important;
-        }
-        header.nav-sticky{
-            background-color: white!important;
 
-        }
-    </style>
 
 @endsection
 @section('content')

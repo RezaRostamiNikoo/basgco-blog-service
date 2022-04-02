@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -23,7 +24,7 @@ class Post extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('posts')
-            ->useFallbackUrl('/assets/images/default-post-header-image.jpg')
+            ->useFallbackUrl('/assets/images/default-post-header-image.jpeg')
 //            ->useFallbackPath(public_path('/images/anonymous-user.jpg'))
 //            ->acceptsFile(function (File $file) {
 //                return $file->mimeType === 'image/jpeg';
@@ -63,20 +64,60 @@ class Post extends Model implements HasMedia
         return count($post) ? $post[0] : Post::create(['author_id' => auth()->user()->id]);
     }
 
+    public function isPublishable()
+    {
+        if ($this->post_status === 'draft')
+            return true;
+        return false;
+    }
+    public function isPublished()
+    {
+        return $this->post_status === 'published' ;
+    }
+
+    public function publish()
+    {
+        $this->save([
+            'post_status' => 'published',
+            'published_at' => Carbon::now()
+        ]);
+    }
+    public function unpublish(){
+        $this->save([
+            'post_status' => 'draft',
+            'published_at' => null
+        ]);
+    }
+
+
+    public function asignCategory($id){
+        $this->deleteCategories();
+        $this->categories()->save(Category::where('id', $id)->first());
+    }
+    public function deleteCategories()
+    {
+        $this->morphMany(ModelCategory::class, "categorizable", "categorizable_type", "categorizable_id", "id")->delete();
+    }
+
+    //////////////////////////
+    /// Connect to other models
+    //////////////////////////
     public function tags()
     {
         return $this->morphToMany(Tag::class, 'taggable', 'model_tags');
     }
+
 
     public function categories()
     {
         return $this->morphToMany(Category::class, 'categorizable', 'model_categories');
     }
 
-
     public function author(): BelongsTo
     {
-        return $this->belongsTo(User::class, "author_id", "id");
+        return $this->belongsTo(Admin::class, "author_id", "id");
     }
+
+
 
 }

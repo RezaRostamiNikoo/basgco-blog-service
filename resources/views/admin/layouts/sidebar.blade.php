@@ -27,7 +27,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{route('admin.categories.create')}}" class="waves-effect">
+                    <a href="{{route('admin.categories.list')}}" class="waves-effect">
                         <i class="bx bx-detail"></i>
                         <span key="t-categories">@lang('translation.categories')</span>
                     </a>

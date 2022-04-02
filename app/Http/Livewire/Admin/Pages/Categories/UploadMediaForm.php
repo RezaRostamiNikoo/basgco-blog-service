@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Components;
+namespace App\Http\Livewire\Admin\Pages\Categories;
 
 use App\Models\Post;
 use Livewire\Component;

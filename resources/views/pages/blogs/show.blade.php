@@ -1,4 +1,4 @@
-@extends("layouts.master")
+@extends("layouts.master",['menutype'=>'dark'])
 
 @section("title","بلاگ | برج افرازان شاهین گستر")
 
@@ -16,7 +16,7 @@
                 <div class="col-lg-12 text-center">
                     <div class="page-next-level">
                         <h2>{{$post->title}}</h2>
-                        <h5>{{$post->sub_title}}</h5>
+{{--                        <h5>{{$post->sub_title}}</h5>--}}
                         <ul class="list-unstyled mt-4">
                             <li class="list-inline-item h6 user text-muted me-2"><i class="mdi mdi-account"></i>
                                 {{$post->author->name}}
