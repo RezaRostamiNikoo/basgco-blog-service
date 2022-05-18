@@ -45,11 +45,7 @@ Route::middleware('auth:sanctum')->prefix('/admin')->name('admin.')->group(funct
 
     Route::prefix('/media')->name('media.')->group(function () {
         Route::get('/', \App\Http\Livewire\Admin\Media\Media::class)->name('index');
-
     });
-
-
 });
-
 
 Route::get('news/verifying-email/{token}', [\App\Http\Controllers\NewsLetterController::class, 'verify'])->name('news-veridying');
